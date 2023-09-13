@@ -14,7 +14,7 @@ from aiogram.types import (
     ReplyKeyboardRemove,
 )
 
-from form import router as form_router
+import form
 
 router = Router()
 
@@ -26,6 +26,7 @@ async def command_start(message: Message, state: FSMContext) -> None:
         "Main start",
         reply_markup=ReplyKeyboardRemove(),
     )
+    await state.set_state(form.States.name)
 
 
 @router.message(Command("cancel"))
@@ -47,8 +48,7 @@ async def main():
     token = os.getenv("BOT_TOKEN")
     bot = Bot(token=token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
-    dp.include_router(router)
-    dp.include_router(form_router)
+    dp.include_routers(router, form.router)
 
     await dp.start_polling(bot)
 
