@@ -111,7 +111,9 @@ async def process_language(message: Message, state: FSMContext) -> None:
     await show_summary(message=message, data=data)
 
 
-async def show_summary(message: Message, data: Dict[str, Any], positive: bool = True) -> None:
+async def show_summary(
+    message: Message, data: Dict[str, Any], positive: bool = True
+) -> None:
     name = data["name"]
     language = data.get("language", "<something unexpected>")
     text = f"I'll keep in mind that, {html.quote(name)}, "
