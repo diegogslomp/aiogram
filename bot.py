@@ -47,6 +47,7 @@ async def main():
     token = os.getenv("BOT_TOKEN")
     bot = Bot(token=token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
+    dp.include_router(router)
     dp.include_router(form_router)
 
     await dp.start_polling(bot)
