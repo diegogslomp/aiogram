@@ -5,6 +5,7 @@ import os
 
 from aiogram import Bot, Dispatcher, Router, types
 from aiogram.enums import ParseMode
+from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 router = Router()
@@ -15,7 +16,7 @@ class States(StatesGroup):
 
 
 @router.message()
-async def echo_handler(message: types.Message) -> None:
+async def echo_handler(message: types.Message, state: FSMContext) -> None:
     try:
         await message.send_copy(chat_id=message.chat.id)
     except TypeError:
