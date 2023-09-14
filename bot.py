@@ -5,22 +5,13 @@ import os
 
 from aiogram import Bot, Dispatcher, Router, types
 from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import Message
-from aiogram.utils.markdown import hbold
-
 
 router = Router()
 
 
 class States(StatesGroup):
     some = State()
-
-
-@router.message(CommandStart())
-async def command_start_handler(message: Message) -> None:
-    await message.answer(f"Hello, {hbold(message.from_user.full_name)}!")
 
 
 @router.message()
