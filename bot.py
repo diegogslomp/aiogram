@@ -5,6 +5,7 @@ import os
 
 from aiogram import Bot, Dispatcher, Router, types
 from aiogram.enums import ParseMode
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
@@ -13,6 +14,15 @@ router = Router()
 
 class States(StatesGroup):
     some = State()
+
+
+@router.message(Command("cancel"))
+async def cancel_handler(message: types.Message, state: FSMContext) -> None:
+    current_state = await state.get_state()
+    if current_state == None:
+        return
+    await state.clear()
+    await message.answer("Cancelled")
 
 
 @router.message()
