@@ -1,19 +1,23 @@
 import asyncio
 import logging
 import sys
-import os
 
-from aiogram import Bot, Dispatcher
+from middleware.auth import AuthMiddleware
 from aiogram.enums import ParseMode
+from aiogram import Bot, Dispatcher
 
+from authorization_keys import BOT_TOKEN
 from commands.echo import echo_router
 
 
 async def main() -> None:
-    token = os.getenv("BOT_TOKEN")
+    token = BOT_TOKEN
     bot = Bot(token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
-    dp.include_router(echo_router)
+    dp.message.middleware(AuthMiddleware())
+    dp.include_routers(
+        echo_router,
+    )
     await dp.start_polling(bot)
 
 

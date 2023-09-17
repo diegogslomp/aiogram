@@ -1,0 +1,5 @@
+authorized_users = {
+    "user": 1122334455,
+}
+
+BOT_TOKEN = ""

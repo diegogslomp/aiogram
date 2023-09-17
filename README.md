@@ -1,7 +1,7 @@
 ### Telegram Bot using FSM (Finite State Machine) Aiogram
 
 ```
-cp env.example .env # Add key
-pipenv install
-pipenv run python bot.py
+cp authorization_keys.py.example authorization_keys.py
+pip install aiogram
+python bot.py
 ```

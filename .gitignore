@@ -2,3 +2,4 @@
 .vscode
 Pipfile.lock
 .pytest_cache
+authorization_keys.py
