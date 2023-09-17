@@ -11,8 +11,7 @@ from command.echo import echo_router
 
 
 async def main() -> None:
-    token = bot_token
-    bot = Bot(token, parse_mode=ParseMode.HTML)
+    bot = Bot(bot_token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
     dp.include_routers(
