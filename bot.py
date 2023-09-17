@@ -1,16 +1,15 @@
-import asyncio
-import logging
-import sys
-
 from middleware.auth import AuthMiddleware
 from aiogram.enums import ParseMode
 from aiogram import Bot, Dispatcher
+import asyncio
+import logging
+import sys
 
 from keys import bot_token, log_level
 from command.echo import echo_router
 
 
-async def main() -> None:
+async def main():
     bot = Bot(bot_token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
