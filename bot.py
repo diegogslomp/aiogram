@@ -3,18 +3,10 @@ import logging
 import sys
 import os
 
-from aiogram import Bot, Dispatcher, Router, types
+from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
-from aiogram.fsm.context import FSMContext
 
-echo_router = Router()
-
-@echo_router.message()
-async def echo_handler(message: types.Message, state: FSMContext) -> None:
-    try:
-        await message.send_copy(chat_id=message.chat.id)
-    except TypeError:
-        await message.answer("Nice try!")
+from commands.echo import echo_router
 
 
 async def main() -> None:
