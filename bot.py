@@ -6,12 +6,12 @@ from middleware.auth import AuthMiddleware
 from aiogram.enums import ParseMode
 from aiogram import Bot, Dispatcher
 
-from keys import BOT_TOKEN
+from keys import bot_token, log_level
 from command.echo import echo_router
 
 
 async def main() -> None:
-    token = BOT_TOKEN
+    token = bot_token
     bot = Bot(token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
@@ -23,6 +23,6 @@ async def main() -> None:
 
 if __name__ == "__main__":
     logging.basicConfig(
-        level=logging.INFO, stream=sys.stdout, format="%(asctime)s %(message)s"
+        level=log_level, stream=sys.stdout, format="%(asctime)s %(message)s"
     )
     asyncio.run(main())
