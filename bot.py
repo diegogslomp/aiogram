@@ -10,6 +10,9 @@ from command.echo import echo_router
 
 
 async def main():
+    logging.basicConfig(
+        level=log_level, stream=sys.stdout, format="%(asctime)s %(message)s"
+    )
     bot = Bot(token=bot_token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
@@ -20,7 +23,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        level=log_level, stream=sys.stdout, format="%(asctime)s %(message)s"
-    )
     asyncio.run(main())
