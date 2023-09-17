@@ -1,5 +1,6 @@
 .env
 .vscode
+Pipfile
 Pipfile.lock
 .pytest_cache
-authorization_keys.py
+keys.py

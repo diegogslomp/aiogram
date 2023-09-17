@@ -1,4 +1,4 @@
-from authorization_keys import authorized_users
+from keys import authorized_users
 from aiogram import BaseMiddleware
 import logging
 

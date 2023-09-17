@@ -6,8 +6,8 @@ from middleware.auth import AuthMiddleware
 from aiogram.enums import ParseMode
 from aiogram import Bot, Dispatcher
 
-from authorization_keys import BOT_TOKEN
-from commands.echo import echo_router
+from keys import BOT_TOKEN
+from command.echo import echo_router
 
 
 async def main() -> None:
