@@ -1,3 +1,4 @@
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.fsm.context import FSMContext
 from aiogram import Router, types
 import logging
@@ -12,5 +13,5 @@ async def echo_handler(message: types.Message, state: FSMContext) -> None:
 
     try:
         await message.send_copy(chat_id=message.chat.id)
-    except TypeError:
-        await message.answer("Nice try!")
+    except (TypeError, TelegramBadRequest):
+        await message.answer("nice try")
