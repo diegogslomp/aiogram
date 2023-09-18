@@ -4,16 +4,19 @@ from aiogram import Bot, Dispatcher
 import asyncio
 import logging
 import sys
+import os
 
-from secrets import bot_token, log_level
+
 from command.echo import echo_router
 
 
 async def main():
+    level = os.getenv("LOG_LEVEL", logging.INFO)
     logging.basicConfig(
-        level=log_level, stream=sys.stdout, format="%(asctime)s %(message)s"
+        level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
     )
-    bot = Bot(token=bot_token, parse_mode=ParseMode.HTML)
+    token = os.environ["BOT_TOKEN"]
+    bot = Bot(token=token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
     dp.include_routers(

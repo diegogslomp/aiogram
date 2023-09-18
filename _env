@@ -1,0 +1,4 @@
+USER_IDS='{"user": 1122334455}'
+BOT_TOKEN=''
+LOG_LEVEL='INFO'
+

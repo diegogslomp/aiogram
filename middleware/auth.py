@@ -1,10 +1,13 @@
 from aiogram import BaseMiddleware
-from secrets import authorized_users
 import logging
+import ast
+import os
 
 
 class AuthMiddleware(BaseMiddleware):
     async def __call__(self, handler, event, data):
+        authorized_users = ast.literal_eval(os.environ["USER_IDS"])
+
         if event.from_user.id not in authorized_users.values():
             logging.warning(
                 f"{event.from_user.username} id {event.from_user.id} not authorized"
