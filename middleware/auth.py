@@ -1,5 +1,5 @@
 from aiogram import BaseMiddleware
-from keys import authorized_users
+from secrets import authorized_users
 import logging
 
 

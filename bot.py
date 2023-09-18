@@ -5,7 +5,7 @@ import asyncio
 import logging
 import sys
 
-from keys import bot_token, log_level
+from secrets import bot_token, log_level
 from command.echo import echo_router
 
 

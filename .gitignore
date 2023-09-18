@@ -1,6 +1,6 @@
-.env
 .vscode
+__pycache__
 Pipfile
 Pipfile.lock
-.pytest_cache
-keys.py
+secrets.py
+.env
