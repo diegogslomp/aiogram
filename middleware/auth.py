@@ -1,3 +1,4 @@
+from aiogram.dispatcher.event.bases import SkipHandler, CancelHandler
 from aiogram import BaseMiddleware
 import logging
 import ast
@@ -12,5 +13,5 @@ class AuthMiddleware(BaseMiddleware):
             logging.warning(
                 f"{event.from_user.username} id {event.from_user.id} not authorized"
             )
-            return
+            raise SkipHandler()
         return await handler(event, data)
