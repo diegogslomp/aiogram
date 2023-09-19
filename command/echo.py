@@ -8,7 +8,7 @@ echo_router = Router()
 
 @echo_router.message()
 async def echo_handler(message: types.Message, state: FSMContext) -> None:
-    logging.warning(f"id {message.from_user.id} echo f{message.text}")
+    logging.warning(f"ID {message.from_user.id} echo f{message.text}")
     await state.clear()
 
     try:

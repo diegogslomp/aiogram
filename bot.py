@@ -11,10 +11,6 @@ from command.echo import echo_router
 
 
 async def main():
-    level = os.getenv("LOG_LEVEL", logging.INFO)
-    logging.basicConfig(
-        level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
-    )
     token = os.environ["TELEGRAM_TOKEN"]
     bot = Bot(token=token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
@@ -26,4 +22,13 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    level = os.getenv("LOG_LEVEL", logging.INFO)
+    logging.basicConfig(
+        level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
+    )
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        logging.warning("Bot interrupted")
+    except Exception as e:
+        logging.warning(e)
