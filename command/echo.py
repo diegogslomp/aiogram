@@ -8,10 +8,10 @@ echo_router = Router()
 
 @echo_router.message()
 async def echo_handler(message: types.Message, state: FSMContext) -> None:
-    logging.warning(f"ID {message.from_user.id} echo f{message.text}")
+    logging.warning(f"Echo id={message.from_user.id} msg=f{message.text}")
     await state.clear()
 
     try:
         await message.send_copy(chat_id=message.chat.id)
     except (TypeError, TelegramBadRequest):
-        await message.answer("nice try")
+        await message.answer("Nice try")
