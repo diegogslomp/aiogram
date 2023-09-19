@@ -6,7 +6,7 @@ import os
 
 class AuthMiddleware(BaseMiddleware):
     async def __call__(self, handler, event, data):
-        authorized_users = ast.literal_eval(os.environ["USER_IDS"])
+        authorized_users = ast.literal_eval(os.getenv("TELEGRAM_USERS", "{}"))
 
         if event.from_user.id not in authorized_users.values():
             logging.warning(

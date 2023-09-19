@@ -15,7 +15,7 @@ async def main():
     logging.basicConfig(
         level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
     )
-    token = os.environ["BOT_TOKEN"]
+    token = os.environ["TELEGRAM_TOKEN"]
     bot = Bot(token=token, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())

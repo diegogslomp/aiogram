@@ -16,7 +16,7 @@ from aiogram.types import (
     ReplyKeyboardRemove,
 )
 
-TOKEN = getenv("BOT_TOKEN")
+TOKEN = getenv("TELEGRAM_TOKEN")
 
 form_router = Router()
 
