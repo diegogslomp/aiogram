@@ -7,8 +7,8 @@ import os
 
 
 from ...middleware import AuthMiddleware
-from ...command.echo import echo_router
-from ...main import main
+from ...commands.echo import echo_router
+from ...bot import main
 
 
 

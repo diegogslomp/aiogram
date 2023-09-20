@@ -7,10 +7,10 @@ import os
 
 try:
     from .middleware import AuthMiddleware
-    from .command.echo import echo_router
+    from .commands.echo import echo_router
 except ImportError:
     from middleware import AuthMiddleware
-    from command.echo import echo_router
+    from commands.echo import echo_router
 
 
 async def run():
