@@ -1,25 +1,19 @@
 from django.core.management.base import BaseCommand
-from aiogram.enums import ParseMode
-from aiogram import Bot, Dispatcher
 import asyncio
 import logging
-import os
 
 
-from ...middleware import AuthMiddleware
-from ...commands.echo import echo_router
-from ...bot import main
-
+from ...bot import run
 
 
 class Command(BaseCommand):
     args = ""
-    help = "Question daemon"
+    help = "Bot daemon"
 
     def handle(self, *args, **options):
         logging.info(f"{self.help} started")
         try:
-            asyncio.run(main())
+            asyncio.run(run())
         except (KeyboardInterrupt, SystemExit):
             logging.warning("Bot interrupted")
         except Exception as e:
