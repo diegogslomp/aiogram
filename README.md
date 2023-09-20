@@ -2,7 +2,7 @@
 
 Docker
 ````sh
-docker run --rm -e TELEGRAM_TOKEN='' -e TELEGRAM_USERS='{"user": 1122334455}' diegogslomp/bot
+docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': 1122334455}" diegogslomp/bot
 ````
 Local dev
 ```sh
