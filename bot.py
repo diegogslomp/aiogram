@@ -7,10 +7,12 @@ import os
 
 try:
     from .middleware import AuthMiddleware
-    from .commands.echo import echo_router
+    from .examples.echo import echo_router
+    from .examples.fsm import form_router
 except ImportError:
     from middleware import AuthMiddleware
-    from commands.echo import echo_router
+    from examples.echo import echo_router
+    from examples.fsm import form_router
 
 
 async def run():
@@ -19,6 +21,7 @@ async def run():
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
     dp.include_routers(
+        form_router,
         echo_router,
     )
     await dp.start_polling(bot)
