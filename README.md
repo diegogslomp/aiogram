@@ -21,4 +21,4 @@ pip install -r requirements.txt
 # Add bot app in project settings
 python run manage.py bot
 ```
-/start /cancel or any for echo message
+Chat `/start` `/cancel` or any for echo message
