@@ -17,3 +17,4 @@ pip install aiogram
 # Add bot app in project settings
 python run manage.py bot
 ```
+/start /cancel or any for echo message
