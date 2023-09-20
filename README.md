@@ -1,4 +1,4 @@
-### aiogram
+### Finite State Machine Telegram Bot
 
 Standalone
 ```
