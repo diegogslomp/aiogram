@@ -1,0 +1,12 @@
+.vscode
+__pycache__/
+Pipfile
+Pipfile.lock
+management/
+.gitignore
+.dockerignore
+apps.py
+dockerfile
+README.md
+.env
+_env
