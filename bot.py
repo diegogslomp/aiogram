@@ -25,17 +25,15 @@ async def run():
 
 
 def main():
-    level = os.getenv("LOG_LEVEL", logging.INFO)
-    logging.basicConfig(
-        level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
-    )
     try:
         asyncio.run(run())
     except (KeyboardInterrupt, SystemExit):
         logging.warning("Bot interrupted")
-    except Exception as e:
-        logging.warning(e)
 
 
 if __name__ == "__main__":
+    level = os.getenv("LOG_LEVEL", logging.INFO)
+    logging.basicConfig(
+        level=level, stream=sys.stdout, format="%(asctime)s %(message)s"
+    )
     main()

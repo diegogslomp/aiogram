@@ -3,7 +3,7 @@ import asyncio
 import logging
 
 
-from ...bot import run
+from ...bot import main
 
 
 class Command(BaseCommand):
@@ -12,9 +12,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         logging.info(f"{self.help} started")
-        try:
-            asyncio.run(run())
-        except (KeyboardInterrupt, SystemExit):
-            logging.warning("Bot interrupted")
-        except Exception as e:
-            logging.warning(e)
+        main()
