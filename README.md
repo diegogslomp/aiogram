@@ -2,11 +2,11 @@
 
 Docker
 ````sh
-docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': 1122334455}" diegogslomp/bot
+docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': 1122334455}" diegogslomp/aiogram
 ````
 Local dev
 ```sh
-git clone --single-branch https:/github.com/diegogslomp/bot
+git clone --single-branch https:/github.com/diegogslomp/aiogram bot
 cd bot
 pip install -r requirements.txt
 TELEGRAM_TOKEN="" TELEGRAM_USERS="{'user': 1122334455}" python bot.py
@@ -15,7 +15,7 @@ TELEGRAM_TOKEN="" TELEGRAM_USERS="{'user': 1122334455}" python bot.py
 Django app
 ```sh
 cd django-project
-git clone --single-branch https:/github.com/diegogslomp/bot
+git clone --single-branch https:/github.com/diegogslomp/aiogram bot
 pip install -r requirements.txt
 # Add _env keys to environment
 # Add bot app in project settings
