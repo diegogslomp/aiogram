@@ -9,7 +9,7 @@ Local dev
 git clone --single-branch https:/github.com/diegogslomp/bot
 cd bot
 pip install -r requirements.txt
-TELEGRAM_TOKEN='' TELEGRAM_USERS='{"user": 1122334455}' python bot.py
+TELEGRAM_TOKEN="" TELEGRAM_USERS="{'user': 1122334455}" python bot.py
 ```
 
 Django app
