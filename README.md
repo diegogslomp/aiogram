@@ -4,7 +4,7 @@ Docker
 ````sh
 docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': 1122334455}" diegogslomp/aiogram
 ````
-Local dev
+Local
 ```sh
 git clone --single-branch https:/github.com/diegogslomp/aiogram bot
 cd bot
@@ -12,7 +12,7 @@ pip install -r requirements.txt
 TELEGRAM_TOKEN="" TELEGRAM_USERS="{'user': 1122334455}" python bot.py
 ```
 
-Django app
+Django
 ```sh
 cd django-project
 git clone --single-branch https:/github.com/diegogslomp/aiogram bot
