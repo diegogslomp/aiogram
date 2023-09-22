@@ -16,6 +16,7 @@ Django
 ```sh
 cd django-project
 git clone --single-branch https:/github.com/diegogslomp/aiogram bot
+cd bot
 pip install -r requirements.txt
 # Add _env keys to environment
 # Add bot app in project settings
