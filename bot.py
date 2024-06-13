@@ -1,3 +1,4 @@
+from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram import Bot, Dispatcher
 import asyncio
@@ -17,7 +18,8 @@ except ImportError:
 
 async def run():
     token = os.environ["TELEGRAM_TOKEN"]
-    bot = Bot(token=token, parse_mode=ParseMode.HTML)
+    default = DefaultBotProperties(parse_mode=ParseMode.HTML)
+    bot = Bot(token=token, default=default)
     dp = Dispatcher()
     dp.message.middleware(AuthMiddleware())
     dp.include_routers(
