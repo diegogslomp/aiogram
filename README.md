@@ -1,8 +1,10 @@
 ### Finite State Machine Telegram Bot
 
-Create a bot with `@BotFather` on Telegram to get the `TELEGRAM_TOKEN`
-
-Get `user_id` asking `@userinfobot` on Telegram
+1. Get the `TELEGRAM_TOKEN` using `@BotFather` on Telegram
+2. Get `user_id` using `@userinfobot` on Telegram
+3. Chat `/start` `/cancel` or any to echo the message sent
+4. Dialogs in the examples folder
+<br/><br/>
 
 Docker
 ````sh
@@ -40,5 +42,3 @@ pip install -r requirements.txt
 # Add bot app in project settings
 python run manage.py bot
 ```
-
-Chat `/start` `/cancel` or any to echo the message sent
