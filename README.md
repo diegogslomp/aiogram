@@ -1,18 +1,36 @@
 ### Finite State Machine Telegram Bot
 
-[Docker](https://hub.docker.com/r/diegogslomp/aiogram)
+1. Create a bot with `@BotFather` on Telegram to get the `TELEGRAM_TOKEN`
+
+2. Get `user_id` asking `@userinfobot` on Telegram
+
+Docker
 ````sh
-docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': 1122334455}" diegogslomp/aiogram
+docker run --rm -e TELEGRAM_TOKEN="" -e TELEGRAM_USERS="{'user': user_id}" diegogslomp/aiogram
 ````
-[Python](https://www.python.org/)
+
+Local
 ```sh
 git clone --single-branch https:/github.com/diegogslomp/aiogram bot
 cd bot
 pip install -r requirements.txt
-TELEGRAM_TOKEN="" TELEGRAM_USERS="{'user': 1122334455}" python bot.py
 ```
 
-[Django](https://www.djangoproject.com)
+Linux
+```sh
+export TELEGRAM_TOKEN=""
+export TELEGRAM_USERS="{'user': user_id}"
+python bot.py
+```
+
+Windows
+```powershell
+$Env:TELEGRAM_TOKEN=""
+$Env:TELEGRAM_USERS='{"user": user_id}'
+python bot.py
+```
+
+Django
 ```sh
 cd django-project
 git clone --single-branch https:/github.com/diegogslomp/aiogram bot
@@ -22,4 +40,5 @@ pip install -r requirements.txt
 # Add bot app in project settings
 python run manage.py bot
 ```
-Chat `/start` `/cancel` or any for echo message
+
+Chat `/start` `/cancel` or any to echo the message sent

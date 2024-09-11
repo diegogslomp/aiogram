@@ -1,8 +1,8 @@
 .vscode
-__pycache__/
+__pycache__
 Pipfile
 Pipfile.lock
-management/
+management
 .gitignore
 .dockerignore
 apps.py
@@ -10,3 +10,4 @@ dockerfile
 README.md
 .env
 _env
+venv
