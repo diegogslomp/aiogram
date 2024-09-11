@@ -1,8 +1,8 @@
 ### Finite State Machine Telegram Bot
 
-1. Create a bot with `@BotFather` on Telegram to get the `TELEGRAM_TOKEN`
+Create a bot with `@BotFather` on Telegram to get the `TELEGRAM_TOKEN`
 
-2. Get `user_id` asking `@userinfobot` on Telegram
+Get `user_id` asking `@userinfobot` on Telegram
 
 Docker
 ````sh
