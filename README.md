@@ -26,7 +26,7 @@ python bot.py
 Windows
 ```powershell
 $Env:TELEGRAM_TOKEN=""
-$Env:TELEGRAM_USERS='{"user": user_id}'
+$Env:TELEGRAM_USERS="{'user': user_id}"
 python bot.py
 ```
 
