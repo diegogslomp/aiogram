@@ -21,14 +21,12 @@ def sanitize(dirty: str) -> str:
     for char in dirty:
         if char in whitelist:
             clean += char
-
     return clean
 
 
 @router.message(Command("ping"))
 async def ask_host(message: Message, state: FSMContext) -> None:
     await state.set_state(Form.ping)
-
     await message.answer(
         "Inform host or ip",
         reply_markup=ReplyKeyboardRemove(),
@@ -42,7 +40,6 @@ async def cancel(message: Message, state: FSMContext) -> None:
     if current_state is None:
         return
     await state.clear()
-    
     await message.answer(
         "Cancelled.",
         reply_markup=ReplyKeyboardRemove(),
