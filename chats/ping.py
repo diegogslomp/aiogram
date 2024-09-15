@@ -7,6 +7,7 @@ import platform
 import string
 import subprocess
 
+
 ping_router = Router()
 
 
