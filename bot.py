@@ -10,12 +10,12 @@ try:
     from .middleware import AuthMiddleware
     from .chats.fsm import form_router
     from .chats.echo import echo_router
-    from .chats.ping import ping_router
+    from .chats.ping import router as ping_router
 except ImportError:
     from middleware import AuthMiddleware
     from chats.fsm import form_router
     from chats.echo import echo_router
-    from chats.ping import ping_router
+    from chats.ping import router as ping_router
 
 
 async def run():

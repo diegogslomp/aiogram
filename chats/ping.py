@@ -8,7 +8,7 @@ import string
 import subprocess
 
 
-ping_router = Router()
+router = Router()
 
 
 class Form(StatesGroup):
@@ -16,10 +16,8 @@ class Form(StatesGroup):
 
 
 def sanitize(dirty: str) -> str:
-
     clean = ""
     whitelist = string.ascii_letters + string.digits + "-" + "_" + "."
-
     for char in dirty:
         if char in whitelist:
             clean += char
@@ -27,17 +25,18 @@ def sanitize(dirty: str) -> str:
     return clean
 
 
-@ping_router.message(Command("ping"))
+@router.message(Command("ping"))
 async def ask_host(message: Message, state: FSMContext) -> None:
     await state.set_state(Form.ping)
+
     await message.answer(
         "Inform host or ip",
         reply_markup=ReplyKeyboardRemove(),
     )
 
 
-@ping_router.message(Command("cancel"))
-@ping_router.message(F.text.casefold() == "cancel")
+@router.message(Command("cancel"))
+@router.message(F.text.casefold() == "cancel")
 async def cancel(message: Message, state: FSMContext) -> None:
     current_state = await state.get_state()
     if current_state is None:
@@ -45,12 +44,12 @@ async def cancel(message: Message, state: FSMContext) -> None:
 
     await state.clear()
     await message.answer(
-        "Canceled",
+        "Cancelled.",
         reply_markup=ReplyKeyboardRemove(),
     )
 
 
-@ping_router.message(Form.ping)
+@router.message(Form.ping)
 async def ping(message: Message, state: FSMContext) -> None:
     await state.clear()
 
@@ -59,10 +58,7 @@ async def ping(message: Message, state: FSMContext) -> None:
     command = ["ping", param, "1", host]
 
     online = subprocess.call(command) == 0
-
-    return_message = "🔴 Down"
-    if online:
-        return_message = "🟢 Up"
+    return_message = "🟢 Up" if online else "🔴 Down"
 
     await message.answer(
         f"{html.quote(return_message)}",
