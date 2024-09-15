@@ -1,8 +1,10 @@
 .vscode
 __pycache__
+__init__.py
 Pipfile
 Pipfile.lock
 management
+.git
 .gitignore
 .dockerignore
 apps.py
