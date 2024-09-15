@@ -2,8 +2,8 @@
 
 1. Get the `TELEGRAM_TOKEN` using `@BotFather` on Telegram
 2. Get `user_id` using `@userinfobot` on Telegram
-3. Chat `/start` `/cancel` or any to echo the message sent
-4. Dialogs in the examples folder
+3. Chat `/start`, `/ping`, `/cancel` or any to echo the message sent
+4. Dialogs in the chats folder
 <br/><br/>
 
 Docker

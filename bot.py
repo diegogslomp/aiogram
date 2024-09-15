@@ -8,12 +8,14 @@ import os
 
 try:
     from .middleware import AuthMiddleware
-    from .examples.echo import echo_router
-    from .examples.fsm import form_router
+    from .chats.fsm import form_router
+    from .chats.echo import echo_router
+    from .chats.ping import ping_router
 except ImportError:
     from middleware import AuthMiddleware
-    from examples.echo import echo_router
-    from examples.fsm import form_router
+    from chats.fsm import form_router
+    from chats.echo import echo_router
+    from chats.ping import ping_router
 
 
 async def run():
@@ -24,6 +26,7 @@ async def run():
     dp.message.middleware(AuthMiddleware())
     dp.include_routers(
         form_router,
+        ping_router,
         echo_router,
     )
     await dp.start_polling(bot)

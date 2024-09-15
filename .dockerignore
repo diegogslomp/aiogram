@@ -6,8 +6,11 @@ management
 .gitignore
 .dockerignore
 apps.py
+Dockerfile
 dockerfile
 README.md
 .env
 _env
 venv
+bot.ps1
+bot.sh
