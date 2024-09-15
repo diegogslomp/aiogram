@@ -58,10 +58,10 @@ async def ping(message: Message, state: FSMContext) -> None:
     param = "-n" if platform.system().lower() == "windows" else "-c"
     command = ["ping", param, "1", host]
 
-    ping = subprocess.call(command) == 0
+    online = subprocess.call(command) == 0
 
     return_message = "🔴 Down"
-    if ping:
+    if online:
         return_message = "🟢 Up"
 
     await message.answer(
