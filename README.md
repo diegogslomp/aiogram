@@ -1,7 +1,7 @@
 ### Finite State Machine Telegram Bot
 
-1. Get the `TELEGRAM_TOKEN` using `@BotFather` on Telegram
-2. Get `user_id` using `@userinfobot` on Telegram
+1. Get `TELEGRAM_TOKEN` with `@BotFather` on Telegram
+2. Get `user_id` with `@userinfobot` on Telegram
 3. Chat `/start`, `/ping`, `/cancel` or any to echo the message sent
 4. Dialogs in the chats folder
 <br/><br/>
